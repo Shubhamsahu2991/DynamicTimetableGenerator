@@ -1,0 +1,35 @@
+﻿@model InputModel
+@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<div class="card shadow-sm p-4">
+    <h4 class="mb-4">Step 1: Timetable Settings</h4>
+    <form asp-action="Step1" method="post">
+      @*   @if (!ViewData.ModelState.IsValid)
+        {
+            <div class="alert alert-danger">
+                @Html.ValidationSummary(false, "", new { @class = "mb-0" })
+            </div>
+        } *@
+
+        <div class="mb-3">
+            <label asp-for="WorkingDays" class="form-label"></label>
+            <input asp-for="WorkingDays" class="form-control" />
+            <span asp-validation-for="WorkingDays" class="text-danger"></span>
+        </div>
+
+        <div class="mb-3">
+            <label asp-for="SubjectsPerDay" class="form-label"></label>
+            <input asp-for="SubjectsPerDay" class="form-control" />
+            <span asp-validation-for="SubjectsPerDay" class="text-danger"></span>
+        </div>
+
+        <div class="mb-3">
+            <label asp-for="TotalSubjects" class="form-label"></label>
+            <input asp-for="TotalSubjects" class="form-control" />
+            <span asp-validation-for="TotalSubjects" class="text-danger"></span>
+        </div>
+
+        <button type="submit" class="btn btn-primary">Next</button>
+    </form>
+</div>
